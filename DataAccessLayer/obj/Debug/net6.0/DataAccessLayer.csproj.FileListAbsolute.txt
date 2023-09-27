@@ -1,0 +1,15 @@
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\bin\Debug\net6.0\Model.dll
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\bin\Debug\net6.0\Model.pdb
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+D:\ASP.NET\BTL\BTlQUYS\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll

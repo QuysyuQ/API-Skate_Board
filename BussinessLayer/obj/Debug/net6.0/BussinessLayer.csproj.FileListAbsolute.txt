@@ -1,0 +1,17 @@
+D:\ASP.NET\BTL\BTlQUYS\BussinessLayer\obj\Debug\net6.0\BussinessLayer.csproj.AssemblyReference.cache
+D:\ASP.NET\BTL\BTlQUYS\BussinessLayer\obj\Debug\net6.0\BussinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\BTL\BTlQUYS\BussinessLayer\obj\Debug\net6.0\BussinessLayer.AssemblyInfoInputs.cache
+D:\ASP.NET\BTL\BTlQUYS\BussinessLayer\obj\Debug\net6.0\BussinessLayer.AssemblyInfo.cs
+D:\ASP.NET\BTL\BTlQUYS\BussinessLayer\obj\Debug\net6.0\BussinessLayer.csproj.CoreCompileInputs.cache
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\bin\Debug\net6.0\BussinessLayer.deps.json
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\bin\Debug\net6.0\BussinessLayer.dll
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\bin\Debug\net6.0\BussinessLayer.pdb
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\bin\Debug\net6.0\Model.dll
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\bin\Debug\net6.0\Model.pdb
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\obj\Debug\net6.0\BussinessLayer.csproj.CopyComplete
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\obj\Debug\net6.0\BussinessLayer.dll
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\obj\Debug\net6.0\refint\BussinessLayer.dll
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\obj\Debug\net6.0\BussinessLayer.pdb
+D:\ASP.NET\BTL\BTLQUYS\BussinessLayer\obj\Debug\net6.0\ref\BussinessLayer.dll
