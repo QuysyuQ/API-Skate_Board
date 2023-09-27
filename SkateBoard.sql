@@ -173,3 +173,4 @@ create proc sp_get_all_donhang
  begin
 	select * from DonHang
  end
+

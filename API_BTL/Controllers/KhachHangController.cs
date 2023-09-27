@@ -42,7 +42,7 @@ namespace API_BTL.Controllers
 
 		public bool Delete(int ID)
 		{
-			return _khachhangBUS.delete(ID);
+			return _khachhangBUS.Delete(ID);
 		}
 	}
 }

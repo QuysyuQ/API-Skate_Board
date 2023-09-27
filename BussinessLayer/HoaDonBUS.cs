@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLayer
 {
-	public class HoaDonBUS:IHoaDonBUSS
+	public class HoaDonBUS : IHoaDonBUSS
 	{
 		private IHoaDonResponsitory _res;
 		
@@ -19,9 +19,9 @@ namespace BussinessLayer
 			res = _res;
 		}
 
-		public HoaDonModel GetDataByID(int ID)
+		public HoaDonModel GetDataByID(int id)
 		{
-			return _res.GetDatabyID(ID);
+			return _res.GetDatabyID(id);
 		}
 		
 

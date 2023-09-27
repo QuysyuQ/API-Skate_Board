@@ -11,7 +11,7 @@ namespace DataAccessLayer
 	public partial class UserResponsitory : IUserResponsitory
 	{
 		public IDatabaseHelper _dbHelper;
-		public UserResponsitory(IDatabaseHelper databaseHelper)s
+		public UserResponsitory(IDatabaseHelper databaseHelper)
 		{
 			_dbHelper = databaseHelper;
 		}

@@ -13,7 +13,7 @@ namespace DataAccessLayer
 		private IDatabaseHelper _dbHelper;
 		public HoaDonResponsitory(IDatabaseHelper _dbHelper)
 		{
-			_dbHelper = dbHelper;
+			_dbHelper = _dbHelper;
 		}
 
 		public HoaDonModel GetDatabyID(int id)
@@ -38,25 +38,22 @@ namespace DataAccessLayer
 			string msgError = "";
 			try
 			{
+
+				var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoadon_create",
+				"@InvoiceID", model.InvoiceID,
+				"@InvoiceDate", model.InvoiceDate,
+				"@SupplierID", model.SupplierID);
+				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
 				{
-					var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoadon_create",
-					"@InvoiceID", model.InvoiceID,
-					"@InvoiceDate", model.InvoiceDate,
-					"@SupplierID", model.SupplierID);
-					if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
-					{
-						throw new Exception(Convert.ToString(result) + msgError);
-					}
-					return true;
+					throw new Exception(Convert.ToString(result) + msgError);
 				}
+				return true;
+			}
 
 			catch (Exception ex)
 			{
 				throw ex;
 			}
 		}
-		}
-
-
 	}
 }
