@@ -168,9 +168,46 @@ begin
 end
 
 
-create proc sp_get_all_donhang
- as
- begin
-	select * from DonHang
- end
 
+
+create proc sp_get_all_hoadonnhap
+as
+begin
+	select * from HoaDonNhap
+end
+
+
+alter proc sp_create_hoadonnhap(@InvoiceID int,@InvoiceDate date,@SupplierID int)
+as
+begin
+	insert into HoaDonNhap(InvoiceID,InvoiceDate,SupplierID)
+	values(@InvoiceID,@InvoiceDate, @SupplierID,)
+end
+
+
+create proc sp_update_khachhang(@InvoiceID int, @InvoiceDate date,@SupplierID int)
+as
+begin
+	update KhachHang
+	set InvoiceID=@InvoiceID,InvoiceDate=@InvoiceDate,SupplierID=@SupplierID
+	where InvoiceID=@InvoiceID
+end
+
+
+
+select *from HoaDonNhap
+
+create proc sp_get_hoa_don_id(@id int)
+as
+BEGIN
+        SELECT h.*, 
+        (
+            SELECT c.*
+            FROM ChiTietHoaDonNhap AS c
+            WHERE h.InvoiceID = c.InvoiceID FOR JSON PATH
+        ) AS list_json_chitiethoadonnhap
+        FROM HoaDonNhap AS h
+        WHERE  h.SupplierID = @id;
+    END;
+
+	exec sp_get_hoa_don_id 1

@@ -12,6 +12,8 @@ namespace Model
 		public DateTime InvoiceDate { get; set; }
 
 		public int SupplierID { get; set; }
+
+		public List<ChiTietHoaDonModel> list_json_chitiethoadonnhap { get;set; }
 	}
 
     public class  ChiTietHoaDonModel

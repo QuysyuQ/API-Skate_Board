@@ -17,7 +17,7 @@ namespace BussinessLayer
 			_res = res;
 		}
 
-		public List<KhachHangModel> getall()
+		public List<KhachHangModel> GetallKhachHang()
 		{
 			return _res.GetallKhachHang();
 		}

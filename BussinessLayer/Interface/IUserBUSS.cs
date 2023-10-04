@@ -9,6 +9,6 @@ namespace BussinessLayer
 {
 	internal partial interface IUserBUSS
 	{
-		UserModel Login(string taikhoan, string matkhau);
+		//UserModel Login(string taikhoan, string matkhau);
 	}
 }

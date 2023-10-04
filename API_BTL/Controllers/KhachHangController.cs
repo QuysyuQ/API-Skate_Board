@@ -14,6 +14,8 @@ namespace API_BTL.Controllers
 		{
 			_khachhangBUS = KhachHang;
 		}
+
+
 		[Route("get_all_khachhang")]
 		[HttpGet]
 		public IEnumerable<KhachHangModel> GetallKhachHangModel()

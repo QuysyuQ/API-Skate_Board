@@ -20,12 +20,12 @@ namespace BussinessLayer
 			secret = configuration["AppSettings:Secret"];
 		}
 
-		public UserModel Login(string taikhoan, string matkhau) 
-		{
-			var user = _res.Login(taikhoan, matkhau);
-			if (user == null)
-				return null;
+		//public UserModel Login(string taikhoan, string matkhau) 
+		//{
+		//	var user = _res.Login(taikhoan, matkhau);
+		//	if (user == null)
+		//		return null;
 
-		}
+		//}
 	}
 }

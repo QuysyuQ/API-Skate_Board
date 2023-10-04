@@ -1,6 +1,7 @@
 using BussinessLayer;
 using BussinessLayer.Interface;
 using DataAccessLayer;
+using DataAccessLayer.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IKhachHangBUSS, KhachHangBUS>();
 builder.Services.AddTransient<IKhachHangResponsitory, KhachHangResponsitory>();
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
+builder.Services.AddTransient<IHoaDonResponsitory, HoaDonResponsitory>();
+builder.Services.AddTransient<IHoaDonBUS, HoaDonBUS>();
 
 var app = builder.Build();
 
