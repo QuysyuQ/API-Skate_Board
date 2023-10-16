@@ -1,6 +1,5 @@
 ﻿using BussinessLayer;
 using BussinessLayer.Interface;
-using DataAccessLayer.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
