@@ -38,6 +38,14 @@ namespace BTL_API.Controllers
 		{
 			return _donhangBUS.Update(model);
 		}
+
+		[Route("delete-donhang")]
+		[HttpPut]
+
+		public bool Delete(int id)
+		{
+			return _donhangBUS.Delete(id);
+		}
 	}
 
 }

@@ -12,5 +12,6 @@ namespace DataAccessLayer.Interface
 		public List<DonHangModel> GetallDonHang();
 		public bool Create(DonHangModel model);
 		public bool Update(DonHangModel model);
+		bool Delete(int id);
 	}
 }

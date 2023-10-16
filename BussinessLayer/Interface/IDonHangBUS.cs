@@ -12,5 +12,6 @@ namespace BussinessLayer.Interface
 		public List<DonHangModel> GetallDonHang();
 		bool Create(DonHangModel model);
 		bool Update(DonHangModel model);
+		bool Delete(int id);
 	}
 }

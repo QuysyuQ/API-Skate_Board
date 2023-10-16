@@ -74,5 +74,25 @@ namespace DataAccessLayer
 				throw ex;
 			}
 		}
+
+		public bool Delete(int id)
+		{
+			string msgError = "";
+			try
+			{
+				string result = "";
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_delele_donhang",
+					"@OrderID", id);
+				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+				{
+					throw new Exception(Convert.ToString(result) + msgError);
+				}
+				return true;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
 	}
 }

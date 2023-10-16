@@ -30,5 +30,9 @@ namespace BussinessLayer
 		{
 			return _res.Update(model);
 		}
+		public bool Delete(int id)
+		{
+			return _res.Delete(id);
+		}
 	}
 }
