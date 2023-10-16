@@ -98,5 +98,10 @@ namespace DataAccessLayer
 				throw ex;
 			}
 		}
+
+		public HoaDonModel Create(int id)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

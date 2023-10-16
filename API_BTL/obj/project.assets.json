@@ -9583,9 +9583,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ASP.NET\\BTLSKB\\API_BTL\\API_BTL.csproj",
-      "projectName": "API_BTL",
-      "projectPath": "D:\\ASP.NET\\BTLSKB\\API_BTL\\API_BTL.csproj",
+      "projectUniqueName": "D:\\ASP.NET\\BTLSKB\\API_BTL\\BTL_API.csproj",
+      "projectName": "BTL_API",
+      "projectPath": "D:\\ASP.NET\\BTLSKB\\API_BTL\\BTL_API.csproj",
       "packagesPath": "C:\\Users\\arkad\\.nuget\\packages\\",
       "outputPath": "D:\\ASP.NET\\BTLSKB\\API_BTL\\obj\\",
       "projectStyle": "PackageReference",

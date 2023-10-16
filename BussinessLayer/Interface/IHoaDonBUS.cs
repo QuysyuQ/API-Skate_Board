@@ -13,6 +13,8 @@ namespace BussinessLayer.Interface
 		public HoaDonModel Create(int id);
 		public HoaDonModel Update(int id);
 		bool Delete(int id);
-
+		bool Update(HoaDonModel model);
+		bool Create(HoaDonModel model);
+		IEnumerable<HoaDonModel> GetallHoaDon();
 	}
 }

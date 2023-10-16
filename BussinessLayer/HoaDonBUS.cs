@@ -4,6 +4,7 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,12 +23,6 @@ namespace BussinessLayer
 		{
 			return _res.Getbyid(id);
 		}
-
-		public bool Create(HoaDonModel model)
-		{
-			return _res.Create(model);
-		}
-
 		public bool Update(HoaDonModel model)
 		{
 			return _res.Update(model);
@@ -36,6 +31,26 @@ namespace BussinessLayer
 		public bool Delete(int id)
 		{
 			return _res.Delete(id);
+		}
+
+		public HoaDonModel Create(int id)
+		{
+			return _res.Create(id);
+		}
+
+		public HoaDonModel Update(int id)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool Create(HoaDonModel model)
+		{
+			throw new NotImplementedException();
+		}
+
+		public IEnumerable<HoaDonModel> GetallHoaDon()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

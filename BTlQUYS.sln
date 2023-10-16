@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{EB5D31B2-4C7F-4CE0-A10F-1B22A5DF6A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{EB5D31B2-4C7F-4CE0-A10F-1B22A5DF6A1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{B13B7909-58D7-4ECB-8251-6D03A876DF29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{B13B7909-58D7-4ECB-8251-6D03A876DF29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinessLayer", "BussinessLayer\BussinessLayer.csproj", "{2A9AA2BE-C780-426A-8249-6091AE0350E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BussinessLayer", "BussinessLayer\BussinessLayer.csproj", "{2A9AA2BE-C780-426A-8249-6091AE0350E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_BTL", "API_BTL\API_BTL.csproj", "{17690701-2944-4E54-84BA-C25716CAF87E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTL_API", "API_BTL\BTL_API.csproj", "{17690701-2944-4E54-84BA-C25716CAF87E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

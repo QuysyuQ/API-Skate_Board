@@ -1,0 +1,7 @@
+D:\ASP.NET\BTLSKB\API_BTL\obj\Debug\net6.0\BTLQUYS.csproj.AssemblyReference.cache
+D:\ASP.NET\BTLSKB\API_BTL\obj\Debug\net6.0\BTLQUYS.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\BTLSKB\API_BTL\obj\Debug\net6.0\BTLQUYS.AssemblyInfoInputs.cache
+D:\ASP.NET\BTLSKB\API_BTL\obj\Debug\net6.0\BTLQUYS.AssemblyInfo.cs
+D:\ASP.NET\BTLSKB\API_BTL\obj\Debug\net6.0\BTLQUYS.csproj.CoreCompileInputs.cache
+D:\ASP.NET\BTLSKB\API_BTL\obj\Debug\net6.0\BTLQUYS.MvcApplicationPartsAssemblyInfo.cs
+D:\ASP.NET\BTLSKB\API_BTL\obj\Debug\net6.0\BTLQUYS.MvcApplicationPartsAssemblyInfo.cache

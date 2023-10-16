@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interface
 {
-	public partial interface IUserResponsitory
+	public partial interface IDonHangResponsitory
 	{
-		UserModel Login(string taikhoan, string matkhau);
-
+		public List<DonHangModel> GetallDonHang();
+		public bool Create(DonHangModel model);
+		public bool Update(DonHangModel model);
 	}
 }

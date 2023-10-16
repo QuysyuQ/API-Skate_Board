@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vE5JSlejXUoTBmCncFfhrYzksFSPZ25DkMS0uKz3g01FpZ9UDcha21GD1gvqT++luDZlGQEOClueK2mMSxFXYw==",
+  "dgSpecHash": "QO7uwtHd9ZOPeFOVIcW/wQfnnhTFcdGoNPluhAWUSd60uAP/k5jLQtDHP1m+0cFtyKsVrFzFVq+40viOtaTWSA==",
   "success": true,
-  "projectFilePath": "D:\\ASP.NET\\BTLSKB\\API_BTL\\API_BTL.csproj",
+  "projectFilePath": "D:\\ASP.NET\\BTLSKB\\API_BTL\\BTL_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arkad\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\arkad\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

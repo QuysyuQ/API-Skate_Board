@@ -4,37 +4,46 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 
-namespace API_BTL.Controllers
+namespace BTL_API.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
 	public class HoaDonController : ControllerBase
 	{
 		private IHoaDonBUS _hoadonBUS;
-		public HoaDonController(IHoaDonBUS hoaDonBUSS)
+		public HoaDonController(IHoaDonBUS HoaDon)
 		{
-			_hoadonBUS = hoaDonBUSS;
+			_hoadonBUS = HoaDon;
 		}
 
-		[Route("get-by-id")]
+		[Route("get_all_hoadon")]
 		[HttpGet]
-		public HoaDonModel GetDataByID(int ID)
+		public IEnumerable<HoaDonModel> GetallHoaDonModel()
 		{
-			return _hoadonBUS.Getbyid(ID);
+			return _hoadonBUS.GetallHoaDon();
 		}
 
-		[Route("get-by-id")]
-		[HttpGet]
-		public HoaDonModel Create(int id)
+		[Route("create-hoadon")]
+		[HttpPost]
+
+		public bool Create(HoaDonModel model)
 		{
-			return _hoadonBUS.Create(id);
+			return _hoadonBUS.Create(model);
 		}
 
-		[Route("get-by-id")]
-		[HttpGet]
-		public HoaDonModel Update(int id)
+		[Route("update-hoadon")]
+		[HttpPut]
+		public bool Update(HoaDonModel model)
 		{
-			return _hoadonBUS.Update(id);
+			return _hoadonBUS.Update(model);
+		}
+
+		[Route("delete-hoadon")]
+		[HttpPut]
+
+		public bool Delete(int ID)
+		{
+			return _hoadonBUS.Delete(ID);
 		}
 	}
 }

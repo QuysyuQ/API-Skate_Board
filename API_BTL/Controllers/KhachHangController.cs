@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 
-namespace API_BTL.Controllers
+namespace BTL_API.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]

@@ -12,6 +12,6 @@ namespace BussinessLayer.Interface
 		public List<KhachHangModel> GetallKhachHang();
 		bool Create(KhachHangModel model);
 		bool Update(KhachHangModel model);
-		bool Delete(int ID);
+		bool Delete(int id);
 	}
 }

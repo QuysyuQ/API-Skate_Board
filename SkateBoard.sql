@@ -185,13 +185,94 @@ begin
 end
 
 
-create proc sp_update_khachhang(@InvoiceID int, @InvoiceDate date,@SupplierID int)
+create proc sp_update_hoadonnhap(@InvoiceID int, @InvoiceDate date,@SupplierID int)
 as
 begin
-	update KhachHang
+	update HoaDonNhap
 	set InvoiceID=@InvoiceID,InvoiceDate=@InvoiceDate,SupplierID=@SupplierID
 	where InvoiceID=@InvoiceID
 end
+
+
+create proc sp_delele_HoaDonNhap(@InvoiceID int)
+as
+begin
+	delete from HoaDonNhap
+	where InvoiceID=@InvoiceID
+end
+
+
+create proc sp_get_all_nhacungcap
+as
+begin
+	select * from NhaCungCap
+end
+
+
+alter proc sp_create_nhacungcap(@SupplierID int,@SupplierName nvarchar(100),@Address nvarchar(200), @Phone nvarchar(20), @Email nvarchar(100))
+as
+begin
+	insert into NhaCungCap(SupplierID,SupplierName,Address,Phone,Email)
+	values(@SupplierID, @SupplierName, @Address,@Phone,@Email)
+end
+
+
+create proc sp_update_nhacungcap(@SupplierID int, @SupplierName nvarchar(100),@Address nvarchar(200),@Phone nvarchar(20),@Email nvarchar(100))
+as
+begin
+	update NhaCungCap
+	set SupplierID=@SupplierID,SupplierName=@SupplierName,Address=@Address,Phone=@Phone,Email=@Email
+	where SupplierID=@SupplierID
+end
+
+
+create proc sp_delele_NhaCungCap(@SupplierID int)
+as
+begin
+	delete from NhaCungCap
+	where SupplierID=@SupplierID
+end
+
+
+create proc sp_get_all_sanpham
+as
+begin
+	select * from SanPham
+end
+
+
+
+alter proc sp_create_sanpham(@ProductID int,@ProductName nvarchar(100),@Price decimal(10, 2), @Description text)
+as
+begin
+	insert into SanPham(ProductID,ProductName,Price,Description)
+	values(@ProductID, @ProductName, @Price,@Description)
+end
+
+
+alter proc sp_update_sanpham(@ProductID int,@ProductName nvarchar(100),@Price decimal(10, 2), @Description text)
+as
+begin
+	Update SanPham
+	set ProductID=@ProductID,ProductName=@ProductName,Price=@Price,Description=@Description
+	where ProductID=@ProductID
+end
+
+
+alter proc sp_delete_sanpham(@ProductID int)
+as
+begin
+	delete from SanPham
+	where ProductID=@ProductID
+end
+
+
+
+
+
+
+
+
 
 
 

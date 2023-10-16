@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-	internal class AuthenticateModel
+	public class DonHangModel
 	{
+		public int OrderID { get; set; }
+		public string OrderDate { get; set; }
+		public int CustomerID { get; set; }
 	}
 }
