@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DataAccessLayer.Interface;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-	public partial class ChiTietDonHangResponsitory
+	public class ChiTietDonHangResponsitory : IChiTietDonHangResponsitory
 	{
 		private IDatabaseHelper _dbHelper;
 		public ChiTietDonHangResponsitory(IDatabaseHelper dbHelper)

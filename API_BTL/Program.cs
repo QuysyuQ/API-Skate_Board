@@ -16,6 +16,8 @@ builder.Services.AddTransient<IKhachHangResponsitory, KhachHangResponsitory>();
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
 builder.Services.AddTransient<IHoaDonResponsitory, HoaDonResponsitory>();
 builder.Services.AddTransient<IHoaDonBUS, HoaDonBUS>();
+builder.Services.AddTransient<IChiTietDonHangResponsitory, ChiTietDonHangResponsitory>();
+builder.Services.AddTransient<IChiTietDonHangBUS, ChiTietDonHangBUSS>();
 
 var app = builder.Build();
 

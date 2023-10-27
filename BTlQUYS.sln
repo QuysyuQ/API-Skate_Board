@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BussinessLayer", "Bussiness
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTL_API", "API_BTL\BTL_API.csproj", "{17690701-2944-4E54-84BA-C25716CAF87E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhachHangAPI", "KhachHangAPI\KhachHangAPI.csproj", "{D2BDFC6B-DF9E-4418-A59C-02ED3391A0CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{17690701-2944-4E54-84BA-C25716CAF87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17690701-2944-4E54-84BA-C25716CAF87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17690701-2944-4E54-84BA-C25716CAF87E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2BDFC6B-DF9E-4418-A59C-02ED3391A0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2BDFC6B-DF9E-4418-A59C-02ED3391A0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2BDFC6B-DF9E-4418-A59C-02ED3391A0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2BDFC6B-DF9E-4418-A59C-02ED3391A0CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -144,7 +144,7 @@ VALUES
 	select * from KhachHang
  end
 
-alter proc sp_create_khachhang(@Customerid int,@FirstName nvarchar(50),@LastName nvarchar(50),@Email nvarchar(100),@phone nvarchar(20),@Address nvarchar (200))
+create proc sp_create_khachhang(@Customerid int,@FirstName nvarchar(50),@LastName nvarchar(50),@Email nvarchar(100),@phone nvarchar(20),@Address nvarchar (200))
 as
 begin
 	insert into KhachHang(CustomerID,FirstName,LastName,Email,phone,Address)

@@ -11,8 +11,8 @@ namespace BussinessLayer
 {
 	public partial class ChiTietDonHangBUSS : IChiTietDonHangBUS
 	{
-		public IChiTietDonHangBUS _res;
-		public ChiTietDonHangBUSS(IChiTietDonHangBUS res)
+		public IChiTietDonHangResponsitory _res;
+		public ChiTietDonHangBUSS(IChiTietDonHangResponsitory res)
 		{
 			_res = res;
 		}
