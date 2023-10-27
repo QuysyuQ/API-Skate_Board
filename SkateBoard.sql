@@ -1,4 +1,4 @@
-﻿-- Tạo cơ sở dữ liệu
+﻿0-- Tạo cơ sở dữ liệu
 CREATE DATABASE BTLQUYS;
 USE BTLQUYS;
 
@@ -267,28 +267,130 @@ begin
 end
 
 
-
-
-
-
-
-
-
-
-
-select *from HoaDonNhap
-
-create proc sp_get_hoa_don_id(@id int)
+create proc sp_get_all_donhang
 as
-BEGIN
-        SELECT h.*, 
-        (
-            SELECT c.*
-            FROM ChiTietHoaDonNhap AS c
-            WHERE h.InvoiceID = c.InvoiceID FOR JSON PATH
-        ) AS list_json_chitiethoadonnhap
-        FROM HoaDonNhap AS h
-        WHERE  h.SupplierID = @id;
-    END;
+begin
+	select * from DonHang
+end
 
-	exec sp_get_hoa_don_id 1
+
+alter proc sp_create_donhang(@OrderID int, @OrderDate date, @CustomerID int)
+as
+begin
+	insert into DonHang(OrderID,OrderDate,CustomerID)
+	value(@OrderID, @OrderDate,@CustomerID)
+end
+
+alter proc sp_update_donhang(@OrderID int, @OrderDate date, @CustomerID int)
+as
+begin
+	Update DonHang
+	set OrderID=@OrderID,OrderDate=@OrderDate,CustomerID=@CustomerID
+	where OrderID=@OrderID
+end
+
+
+
+alter proc sp_delete_donhang(@OrderID int)
+as
+begin
+	delete from DonHang
+	where OrderID=@OrderID
+end
+
+
+create proc sp_get_all_chitietdonhang
+as
+begin
+	select * from ChiTietDonHang
+end
+
+
+alter proc sp_create_chitietdonhang(@OrderDetailID int, @OrderID int, @ProductID int, @Quantity int)
+as
+begin
+	insert into ChiTietDonHang(OrderDetailID,OrderID,ProductID, Quantity)
+	value(@OrderDetailID, @OrderID,@ProductID, @Quantity)
+end
+
+
+alter proc sp_update_chitietdonhang(@OrderDetailID int, @OrderID int, @ProductID int, @Quantity int)
+as
+begin
+	Update ChiTietDonHang
+	set OrderDetailID=@OrderDetailID,OrderID=@OrderID,ProductID=@ProductID, Quantity=@Quantity)
+	where OrderDetailID=@OrderDetailID
+end
+
+
+alter proc sp_delete_chitietdonhang(@OrderDetailID int)
+as
+begin
+	delete from ChiTietDonHang
+	where OrderDetailID=@OrderDetailID
+end
+
+
+create proc sp_get_all_chitietHDN
+as
+begin
+	select * from ChiTietHoaDonNhap
+end
+
+
+alter proc sp_create_chitietHDN(@InvoiceDetailID int, @InvoiceID int, @ProductID int, @Quantity int, @UnitPrice decimal(10, 2))
+as
+begin
+	insert into ChiTietHoaDonNhap(InvoiceDetailID,InvoiceID,ProductID, Quantity, UnitPrice)
+	value(@InvoiceDetailID, @InvoiceID,@ProductID, @Quantity, @UnitPrice)
+end
+
+
+
+alter proc sp_update_chitietHDN(@InvoiceDetailID int, @InvoiceID int, @ProductID int, @Quantity int, @UnitPrice decimal(10, 2))
+as
+begin
+	Update ChiTietHoaDonNhap
+	set InvoiceDetailID=@InvoiceDetailID,InvoiceID=@InvoiceID,ProductID=@ProductID, Quantity=@Quantity, UnitPrice=@UnitPrice)
+	where InvoiceDetailID=@InvoiceDetailID
+end
+
+
+alter proc sp_delete_chitietHDN(@InvoiceDetailID int)
+as
+begin
+	delete from ChiTietHoaDonNhap
+	where InvoiceDetailID=@InvoiceDetailID
+end
+
+
+create proc sp_get_all_loaitaikhoan
+as
+begin
+	select * from LoaiTaiKhoan
+end
+
+
+alter proc sp_create_loaitaikhoan(@AccountTypeID int, @TypeName varchar(50))
+as
+begin
+	insert into LoaiTaiKhoan(AccountTypeID, TypeName)
+	value(@AccountTypeID, @TypeName)
+end
+
+
+alter proc sp_create_loaitaikhoan(@AccountTypeID int, @TypeName varchar(50))
+as
+begin
+	Update LoaiTaiKhoan
+	set AccountTypeID=@AccountTypeID, TypeName=@TypeName)
+	where AccountTypeID=@AccountTypeID
+end
+
+
+alter proc sp_delete_loaitaikhoan(@AccountTypeID int)
+as
+begin
+	delete from LoaiTaiKhoan
+	where AccountTypeID=@AccountTypeID
+end

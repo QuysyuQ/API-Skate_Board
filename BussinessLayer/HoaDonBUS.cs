@@ -43,12 +43,12 @@ namespace BussinessLayer
 			throw new NotImplementedException();
 		}
 
-		public bool Create(HoaDonModel model)
+		public IEnumerable<HoaDonModel> GetallHoaDon()
 		{
 			throw new NotImplementedException();
 		}
 
-		public IEnumerable<HoaDonModel> GetallHoaDon()
+		public bool Create(HoaDonModel model)
 		{
 			throw new NotImplementedException();
 		}
