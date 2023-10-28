@@ -16,16 +16,15 @@ namespace DataAccessLayer
 			_dbHelper = dbHelper;
 		}
 
-		public HoaDonModel Getbyid(int id)
+		public List<HoaDonModel> GetallHoaDon()
 		{
 			string msgError = "";
 			try
 			{
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_hoa_don_id",
-					 "@id", id);
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_all_hoadon");
 				if (!string.IsNullOrEmpty(msgError))
 					throw new Exception(msgError);
-				return dt.ConvertTo<HoaDonModel>().FirstOrDefault();
+				return dt.ConvertTo<HoaDonModel>().ToList();
 			}
 			catch (Exception ex)
 			{
@@ -38,26 +37,26 @@ namespace DataAccessLayer
 			string msgError = "";
 			try
 			{
-
-				var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_hoadon_create",
+				var xxx = model.list_json_chitietHDN != null ? MessageConvert.SerializeObject(model.list_json_chitietHDN) : null;
+				var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_create_hoadonnhap",
 				"@InvoiceID", model.InvoiceID,
 				"@InvoiceDate", model.InvoiceDate,
-				"@SupplierID", model.SupplierID);
+				"@SupplierID", model.SupplierID,
+				"@list_json_chitiethoadon", model.list_json_chitietHDN != null ? MessageConvert.SerializeObject(model.list_json_chitietHDN) : null);
 				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
 				{
 					throw new Exception(Convert.ToString(result) + msgError);
 				}
 				return true;
 			}
-
 			catch (Exception ex)
 			{
 				throw ex;
 			}
 		}
 
-		public bool Update(HoaDonModel model)
-		{
+			public bool Update(HoaDonModel model)
+			{
 			string msgError = "";
 			try
 			{

@@ -1,4 +1,5 @@
 ﻿using BussinessLayer.Interface;
+using DataAccessLayer.Interface;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ namespace BussinessLayer
 {
 	public partial class ChiTietHDNBUSS : IChiTietHDNBUS
 	{
-		public IChiTietHDNBUS _res;
-		public ChiTietHDNBUSS(IChiTietHDNBUS res)
+		public IChiTietHDNResponsitory _res;
+		public ChiTietHDNBUSS(IChiTietHDNResponsitory res)
 		{
 			_res = res;
 		}

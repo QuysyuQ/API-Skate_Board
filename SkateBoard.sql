@@ -170,19 +170,53 @@ end
 
 
 
-create proc sp_get_all_hoadonnhap
+create proc sp_get_all_hoadon
 as
 begin
 	select * from HoaDonNhap
 end
 
 
-alter proc sp_create_hoadonnhap(@InvoiceID int,@InvoiceDate date,@SupplierID int)
-as
-begin
-	insert into HoaDonNhap(InvoiceID,InvoiceDate,SupplierID)
-	values(@InvoiceID,@InvoiceDate, @SupplierID,)
-end
+create PROCEDURE sp_create_hoadonnhap
+(@InvoiceID int, 
+ @InvoiceDate date, 
+ @SupplierID int,  
+ @list_json_chitiethoadon NVARCHAR(MAX)
+)
+AS
+    BEGIN
+		DECLARE @MaHoaDon INT;
+        INSERT INTO HoaDonNhap
+                (InvoiceID, 
+                 InvoiceDate,
+                 SupplierID              
+                )
+                VALUES
+                (@InvoiceID, 
+                 @InvoiceDate, 
+                 @SupplierID
+                );
+
+				SET @MaHoaDon = (SELECT SCOPE_IDENTITY());
+                IF(@list_json_chitiethoadon IS NOT NULL)
+                    BEGIN
+                        INSERT INTO ChiTietHoaDonNhap
+						 (InvoiceDetailID, 
+						  InvoiceID,
+                          ProductID, 
+                          Quantity,
+						  UnitPrice
+                        )
+                    SELECT JSON_VALUE(p.value, '$.InvoiceDetailID'), 
+                            @MaHoaDon, 
+                            JSON_VALUE(p.value, '$.ProductID'),
+							JSON_VALUE(p.value, '$.Quantity'),
+							JSON_VALUE(p.value, '$.UnitPrice')
+							
+                    FROM OPENJSON(@list_json_chitiethoadon) AS p;
+                END;
+        SELECT '';
+    END;
 
 
 create proc sp_update_hoadonnhap(@InvoiceID int, @InvoiceDate date,@SupplierID int)
@@ -202,7 +236,7 @@ begin
 end
 
 
-create proc sp_get_all_nhacungcap
+alter proc sp_get_all_nhacungcap
 as
 begin
 	select * from NhaCungCap
@@ -242,7 +276,7 @@ end
 
 
 
-alter proc sp_create_sanpham(@ProductID int,@ProductName nvarchar(100),@Price decimal(10, 2), @Description text)
+create proc sp_create_sanpham(@ProductID int,@ProductName nvarchar(100),@Price decimal(10, 2), @Description text)
 as
 begin
 	insert into SanPham(ProductID,ProductName,Price,Description)
@@ -267,18 +301,18 @@ begin
 end
 
 
-create proc sp_get_all_donhang
+alter proc sp_get_all_donhang
 as
 begin
 	select * from DonHang
 end
 
 
-alter proc sp_create_donhang(@OrderID int, @OrderDate date, @CustomerID int)
+create proc sp_create_donhang(@OrderID int, @OrderDate date, @CustomerID int)
 as
 begin
 	insert into DonHang(OrderID,OrderDate,CustomerID)
-	value(@OrderID, @OrderDate,@CustomerID)
+	values(@OrderID, @OrderDate,@CustomerID)
 end
 
 alter proc sp_update_donhang(@OrderID int, @OrderDate date, @CustomerID int)
@@ -306,24 +340,28 @@ begin
 end
 
 
-alter proc sp_create_chitietdonhang(@OrderDetailID int, @OrderID int, @ProductID int, @Quantity int)
-as
-begin
-	insert into ChiTietDonHang(OrderDetailID,OrderID,ProductID, Quantity)
-	value(@OrderDetailID, @OrderID,@ProductID, @Quantity)
-end
+CREATE PROCEDURE sp_create_chitietdonhang
+    @OrderDetailID INT,
+    @OrderID INT,
+    @ProductID INT,
+    @Quantity INT
+AS
+BEGIN
+    INSERT INTO ChiTietDonHang (OrderDetailID, OrderID, ProductID, Quantity)
+    VALUES (@OrderDetailID, @OrderID, @ProductID, @Quantity)
+END
 
 
-alter proc sp_update_chitietdonhang(@OrderDetailID int, @OrderID int, @ProductID int, @Quantity int)
+create proc sp_update_chitietdonhang(@OrderDetailID int, @OrderID int, @ProductID int, @Quantity int)
 as
 begin
 	Update ChiTietDonHang
-	set OrderDetailID=@OrderDetailID,OrderID=@OrderID,ProductID=@ProductID, Quantity=@Quantity)
+	set OrderDetailID=@OrderDetailID,OrderID=@OrderID,ProductID=@ProductID, Quantity=@Quantity
 	where OrderDetailID=@OrderDetailID
 end
 
 
-alter proc sp_delete_chitietdonhang(@OrderDetailID int)
+create proc sp_delele_chitietdonhang(@OrderDetailID int)
 as
 begin
 	delete from ChiTietDonHang
@@ -338,16 +376,16 @@ begin
 end
 
 
-alter proc sp_create_chitietHDN(@InvoiceDetailID int, @InvoiceID int, @ProductID int, @Quantity int, @UnitPrice decimal(10, 2))
+create proc sp_create_chitietHDN(@InvoiceDetailID int, @InvoiceID int, @ProductID int, @Quantity int, @UnitPrice decimal(10, 2))
 as
 begin
 	insert into ChiTietHoaDonNhap(InvoiceDetailID,InvoiceID,ProductID, Quantity, UnitPrice)
-	value(@InvoiceDetailID, @InvoiceID,@ProductID, @Quantity, @UnitPrice)
+	values(@InvoiceDetailID, @InvoiceID,@ProductID, @Quantity, @UnitPrice)
 end
 
 
 
-alter proc sp_update_chitietHDN(@InvoiceDetailID int, @InvoiceID int, @ProductID int, @Quantity int, @UnitPrice decimal(10, 2))
+create proc sp_update_chitietHDN(@InvoiceDetailID int, @InvoiceID int, @ProductID int, @Quantity int, @UnitPrice decimal(10, 2))
 as
 begin
 	Update ChiTietHoaDonNhap
@@ -356,7 +394,7 @@ begin
 end
 
 
-alter proc sp_delete_chitietHDN(@InvoiceDetailID int)
+create proc sp_delete_chitietHDN(@InvoiceDetailID int)
 as
 begin
 	delete from ChiTietHoaDonNhap
@@ -371,15 +409,15 @@ begin
 end
 
 
-alter proc sp_create_loaitaikhoan(@AccountTypeID int, @TypeName varchar(50))
+create proc sp_create_loaitaikhoan(@AccountTypeID int, @TypeName varchar(50))
 as
 begin
 	insert into LoaiTaiKhoan(AccountTypeID, TypeName)
-	value(@AccountTypeID, @TypeName)
+	values(@AccountTypeID, @TypeName)
 end
 
 
-alter proc sp_create_loaitaikhoan(@AccountTypeID int, @TypeName varchar(50))
+create proc sp_create_loaitaikhoan(@AccountTypeID int, @TypeName varchar(50))
 as
 begin
 	Update LoaiTaiKhoan
@@ -388,7 +426,7 @@ begin
 end
 
 
-alter proc sp_delete_loaitaikhoan(@AccountTypeID int)
+create proc sp_delete_loaitaikhoan(@AccountTypeID int)
 as
 begin
 	delete from LoaiTaiKhoan

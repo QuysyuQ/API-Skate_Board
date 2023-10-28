@@ -19,9 +19,14 @@ namespace BussinessLayer
 			_res = res;
 		}
 
-		public HoaDonModel Getbyid(int id)
+		public List<HoaDonModel> GetallHoaDon()
 		{
-			return _res.Getbyid(id);
+			return _res.GetallHoaDon();
+		}
+
+		public bool Create(HoaDonModel model)
+		{
+			return _res.Create(model);
 		}
 		public bool Update(HoaDonModel model)
 		{
@@ -31,26 +36,6 @@ namespace BussinessLayer
 		public bool Delete(int id)
 		{
 			return _res.Delete(id);
-		}
-
-		public HoaDonModel Create(int id)
-		{
-			return _res.Create(id);
-		}
-
-		public HoaDonModel Update(int id)
-		{
-			throw new NotImplementedException();
-		}
-
-		public IEnumerable<HoaDonModel> GetallHoaDon()
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool Create(HoaDonModel model)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

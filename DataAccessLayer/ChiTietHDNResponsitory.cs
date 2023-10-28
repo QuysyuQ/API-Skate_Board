@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DataAccessLayer.Interface;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-	public partial class ChiTietHDNResponsitory
+	public partial class ChiTietHDNResponsitory : IChiTietHDNResponsitory
 	{
 		private IDatabaseHelper _dbHelper;
 		public ChiTietHDNResponsitory(IDatabaseHelper dbHelper)
@@ -19,7 +20,7 @@ namespace DataAccessLayer
 			string msgError = "";
 			try
 			{
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getallchitietHDN");
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_all_chitietHDN");
 				if (!string.IsNullOrEmpty(msgError))
 					throw new Exception(msgError);
 				return dt.ConvertTo<ChiTietHDNModel>().ToList();

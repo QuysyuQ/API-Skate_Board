@@ -9,12 +9,10 @@ namespace BussinessLayer.Interface
 {
 	public partial interface IHoaDonBUS
 	{
-		public HoaDonModel Getbyid(int id);
-		public HoaDonModel Create(int id);
-		public HoaDonModel Update(int id);
-		bool Delete(int id);
-		bool Update(HoaDonModel model);
+		public List<HoaDonModel> GetallHoaDon();
 		bool Create(HoaDonModel model);
-		IEnumerable<HoaDonModel> GetallHoaDon();
+		bool Update(HoaDonModel model);
+		bool Delete(int id);
+
 	}
 }

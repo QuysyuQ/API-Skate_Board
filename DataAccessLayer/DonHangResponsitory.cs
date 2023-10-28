@@ -20,7 +20,7 @@ namespace DataAccessLayer
 			string msgError = "";
 			try
 			{
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getalldonhang");
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_all_donhang");
 				if (!string.IsNullOrEmpty(msgError))
 					throw new Exception(msgError);
 				return dt.ConvertTo<DonHangModel>().ToList();

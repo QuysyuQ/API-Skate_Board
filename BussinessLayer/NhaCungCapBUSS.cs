@@ -31,14 +31,6 @@ namespace BussinessLayer
 		{
 			return _res.Create(model);
 		}
-
-
-
-		List<NhaCungCapModel> INhaCungCapBUS.GetallNhaCungCap()
-		{
-			throw new NotImplementedException();
-		}
-
 		public bool Delete(int id)
 		{
 			return _res.delete(id);

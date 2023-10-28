@@ -16,8 +16,16 @@ builder.Services.AddTransient<IKhachHangResponsitory, KhachHangResponsitory>();
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
 builder.Services.AddTransient<IHoaDonResponsitory, HoaDonResponsitory>();
 builder.Services.AddTransient<IHoaDonBUS, HoaDonBUS>();
+builder.Services.AddTransient<IDonHangResponsitory, DonHangResponsitory>();
+builder.Services.AddTransient<IDonHangBUS, DonHangBUSS>();
 builder.Services.AddTransient<IChiTietDonHangResponsitory, ChiTietDonHangResponsitory>();
 builder.Services.AddTransient<IChiTietDonHangBUS, ChiTietDonHangBUSS>();
+builder.Services.AddTransient<IChiTietHDNResponsitory, ChiTietHDNResponsitory>();
+builder.Services.AddTransient<IChiTietHDNBUS, ChiTietHDNBUSS>();
+builder.Services.AddTransient<INhaCungCapResponsitory, NhaCungCapResponsitory>();
+builder.Services.AddTransient<INhaCungCapBUS, NhaCungCapBUSS>();
+builder.Services.AddTransient<ISanPhamResponsitory, SanPhamResponsitory>();
+builder.Services.AddTransient<ISanPhamBUS, SanPhamBUSS>();
 
 var app = builder.Build();
 
