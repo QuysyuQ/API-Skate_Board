@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DataAccessLayer.Interface;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-	public partial class LoaiTaiKhoanResponsitory
+	public partial class LoaiTaiKhoanResponsitory : ILoaiTaiKhoanResponsitory
 	{
 		public IDatabaseHelper _dbHelper;
 		public LoaiTaiKhoanResponsitory(IDatabaseHelper dbHelper)
@@ -19,7 +20,7 @@ namespace DataAccessLayer
 			string msgError = "";
 			try
 			{
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getallloaitaikhoan");
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_all_loaitaikhoan");
 				if (!string.IsNullOrEmpty(msgError))
 					throw new Exception(msgError);
 				return dt.ConvertTo<LoaiTaiKhoanModel>().ToList();
@@ -72,13 +73,13 @@ namespace DataAccessLayer
 			}
 		}
 
-		public bool delete(int id)
+		public bool Delete(int id)
 		{
 			string msgError = "";
 			try
 			{
 				string result = "";
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_delele_loaitaikhoan",
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_delete_loaitaikhoan",
 					"@AccountTypeID", id);
 				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
 				{

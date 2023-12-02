@@ -40,6 +40,7 @@ namespace DataAccessLayer
 				string result = "";
 				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_create_nhacungcap",
 					"@SupplierID", model.SupplierID,
+					"@SupplierName", model.SupplierName,
 					"@Email", model.Email,
 					"phone", model.Phone,
 					"@Address", model.Address);

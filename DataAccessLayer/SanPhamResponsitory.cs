@@ -41,7 +41,9 @@ namespace DataAccessLayer
 					"@ProductID", model.ProductID,
 					"@ProductName", model.ProductName,
 					"Price", model.Price,
-					"@Description", model.Description);
+					"@Description", model.Description,
+					"@AnhDaiDien", model.AnhDaiDien,
+					"@Size", model.Size);
 				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
 				{
 					throw new Exception(Convert.ToString(result) + msgError);
@@ -65,7 +67,9 @@ namespace DataAccessLayer
 					"@ProductID", model.ProductID,
 					"@ProductName", model.ProductName,
 					"Price", model.Price,
-					"@Description", model.Description);
+					"@Description", model.Description,
+					"@AnhDaiDien", model.AnhDaiDien,
+					"@Size", model.Size);
 				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
 				{
 					throw new Exception(Convert.ToString(result) + msgError);
@@ -84,7 +88,7 @@ namespace DataAccessLayer
 			try
 			{
 				string result = "";
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_delele_sanpham",
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_delete_sanpham",
 					"@ProductID", id);
 				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
 				{

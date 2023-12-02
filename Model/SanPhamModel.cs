@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Model
 		public decimal Price { get; set; }
 		public string Description { get ; set; }
 
-
+		public string AnhDaiDien { get; set; }
+		public string Size { get; set; }
 	}
 }

@@ -26,8 +26,16 @@ builder.Services.AddTransient<INhaCungCapResponsitory, NhaCungCapResponsitory>()
 builder.Services.AddTransient<INhaCungCapBUS, NhaCungCapBUSS>();
 builder.Services.AddTransient<ISanPhamResponsitory, SanPhamResponsitory>();
 builder.Services.AddTransient<ISanPhamBUS, SanPhamBUSS>();
+builder.Services.AddTransient<ILoaiTaiKhoanResponsitory, LoaiTaiKhoanResponsitory>();
+builder.Services.AddTransient<ILoaiTaiKhoanBUS, LoaiTaiKhoanBUSS>();
 
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -35,6 +43,11 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+app.UseRouting();
+app.UseCors(x => x
+	.AllowAnyOrigin()
+	.AllowAnyMethod()
+	.AllowAnyHeader());
 
 app.UseHttpsRedirection();
 

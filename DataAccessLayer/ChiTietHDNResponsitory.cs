@@ -24,6 +24,7 @@ namespace DataAccessLayer
 				if (!string.IsNullOrEmpty(msgError))
 					throw new Exception(msgError);
 				return dt.ConvertTo<ChiTietHDNModel>().ToList();
+				
 			}
 			catch (Exception ex)
 			{
@@ -85,7 +86,7 @@ namespace DataAccessLayer
 			try
 			{
 				string result = "";
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_update_chitietHDN",
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_delete_chitietHDN",
 				"@InvoiceDetailID", id);
 				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
 				{

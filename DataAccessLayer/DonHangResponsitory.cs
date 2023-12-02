@@ -81,7 +81,7 @@ namespace DataAccessLayer
 			try
 			{
 				string result = "";
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_delele_donhang",
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_delete_donhang",
 					"@OrderID", id);
 				if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
 				{

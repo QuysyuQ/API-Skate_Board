@@ -20,7 +20,7 @@ namespace DataAccessLayer
 			string msgError = "";
 			try
 			{
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getallchitietdonhang");
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_all_chitietdonhang");
 				if (!string.IsNullOrEmpty(msgError))
 					throw new Exception(msgError);
 				return dt.ConvertTo<ChiTietDonHangModel>().ToList();
@@ -30,6 +30,7 @@ namespace DataAccessLayer
 				throw ex;
 			}
 		}
+
 		public bool Create(ChiTietDonHangModel model)
 		{
 			string msgError = "";

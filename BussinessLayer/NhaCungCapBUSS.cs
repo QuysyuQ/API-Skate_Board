@@ -29,7 +29,7 @@ namespace BussinessLayer
 
 		public bool Update(NhaCungCapModel model)
 		{
-			return _res.Create(model);
+			return _res.Update(model);
 		}
 		public bool Delete(int id)
 		{

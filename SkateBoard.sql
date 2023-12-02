@@ -243,7 +243,7 @@ begin
 end
 
 
-alter proc sp_create_nhacungcap(@SupplierID int,@SupplierName nvarchar(100),@Address nvarchar(200), @Phone nvarchar(20), @Email nvarchar(100))
+create proc sp_create_nhacungcap(@SupplierID int,@SupplierName nvarchar(100),@Address nvarchar(200), @Phone nvarchar(20), @Email nvarchar(100))
 as
 begin
 	insert into NhaCungCap(SupplierID,SupplierName,Address,Phone,Email)
@@ -276,24 +276,24 @@ end
 
 
 
-create proc sp_create_sanpham(@ProductID int,@ProductName nvarchar(100),@Price decimal(10, 2), @Description text)
+Alter proc sp_create_sanpham(@ProductID int,@ProductName nvarchar(100),@Price decimal(10, 2), @Description text,@AnhDaiDien nvarchar(max),@Size nvarchar(20))
 as
 begin
-	insert into SanPham(ProductID,ProductName,Price,Description)
-	values(@ProductID, @ProductName, @Price,@Description)
+	insert into SanPham(ProductID,ProductName,Price,Description,AnhDaiDien,Size)
+	values(@ProductID, @ProductName, @Price,@Description,@AnhDaiDien,@Size)
 end
 
 
-alter proc sp_update_sanpham(@ProductID int,@ProductName nvarchar(100),@Price decimal(10, 2), @Description text)
+Alter proc sp_update_sanpham(@ProductID int,@ProductName nvarchar(100),@Price decimal(10, 2), @Description text, @AnhDaiDien nvarchar(max),@Size nvarchar(20))
 as
 begin
 	Update SanPham
-	set ProductID=@ProductID,ProductName=@ProductName,Price=@Price,Description=@Description
+	set ProductID=@ProductID,ProductName=@ProductName,Price=@Price,Description=@Description, AnhDaiDien=@AnhDaiDien, Size=@Size
 	where ProductID=@ProductID
 end
 
 
-alter proc sp_delete_sanpham(@ProductID int)
+create proc sp_delete_sanpham(@ProductID int)
 as
 begin
 	delete from SanPham
@@ -301,7 +301,7 @@ begin
 end
 
 
-alter proc sp_get_all_donhang
+create proc sp_get_all_donhang
 as
 begin
 	select * from DonHang
@@ -315,7 +315,7 @@ begin
 	values(@OrderID, @OrderDate,@CustomerID)
 end
 
-alter proc sp_update_donhang(@OrderID int, @OrderDate date, @CustomerID int)
+create proc sp_update_donhang(@OrderID int, @OrderDate date, @CustomerID int)
 as
 begin
 	Update DonHang
@@ -325,7 +325,7 @@ end
 
 
 
-alter proc sp_delete_donhang(@OrderID int)
+create proc sp_delete_donhang(@OrderID int)
 as
 begin
 	delete from DonHang
@@ -374,7 +374,7 @@ as
 begin
 	select * from ChiTietHoaDonNhap
 end
-
+exec sp_get_all_chitietHDN
 
 create proc sp_create_chitietHDN(@InvoiceDetailID int, @InvoiceID int, @ProductID int, @Quantity int, @UnitPrice decimal(10, 2))
 as
@@ -389,7 +389,7 @@ create proc sp_update_chitietHDN(@InvoiceDetailID int, @InvoiceID int, @ProductI
 as
 begin
 	Update ChiTietHoaDonNhap
-	set InvoiceDetailID=@InvoiceDetailID,InvoiceID=@InvoiceID,ProductID=@ProductID, Quantity=@Quantity, UnitPrice=@UnitPrice)
+	set InvoiceDetailID=@InvoiceDetailID,InvoiceID=@InvoiceID,ProductID=@ProductID, Quantity=@Quantity, UnitPrice=@UnitPrice
 	where InvoiceDetailID=@InvoiceDetailID
 end
 
@@ -417,11 +417,11 @@ begin
 end
 
 
-create proc sp_create_loaitaikhoan(@AccountTypeID int, @TypeName varchar(50))
+create proc sp_update_loaitaikhoan(@AccountTypeID int, @TypeName varchar(50))
 as
 begin
 	Update LoaiTaiKhoan
-	set AccountTypeID=@AccountTypeID, TypeName=@TypeName)
+	set AccountTypeID=@AccountTypeID, TypeName=@TypeName
 	where AccountTypeID=@AccountTypeID
 end
 
@@ -432,3 +432,8 @@ begin
 	delete from LoaiTaiKhoan
 	where AccountTypeID=@AccountTypeID
 end
+
+alter table SanPham
+add Size nvarchar(10)
+
+select*from SanPham

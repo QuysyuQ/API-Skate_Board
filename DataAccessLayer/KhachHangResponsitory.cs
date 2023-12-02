@@ -63,7 +63,7 @@ namespace DataAccessLayer
 			try
 			{
 				string result = "";
-				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_update_khachang",
+				var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_update_khachhang",
 					"@CustomerID", model.CustomerID,
 					"@FirstName", model.FirstName,
 					"@LastName", model.LastName,
